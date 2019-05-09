@@ -8,7 +8,6 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="icon" href="favicon.ico" sizes="32x32">
     <link href="assets/css/styles.min.css" rel="stylesheet">
-
 </head>
 <body>
 
@@ -123,7 +122,9 @@
                             <li class="col col-lg-4">
                                 <a href="#" class="item">
                                     <div class="item-image">
-                                        <img src="https://picsum.photos/600/400?random=1" alt="image" width="440">
+                                        <figure>
+                                            <img class="lazyload" data-src="https://picsum.photos/600/400?random=1" alt="image" width="440">
+                                        </figure>
                                     </div>
                                     <div class="item-data">
                                         <div class="item-title">
@@ -142,7 +143,9 @@
                             <li class="col col-lg-4">
                                 <a href="#" class="item">
                                     <div class="item-image">
-                                        <img src="https://picsum.photos/600/400?random=2" alt="image" width="440">
+                                        <figure>
+                                            <img class="lazyload" data-src="https://picsum.photos/600/400?random=2" alt="image" width="440">
+                                        </figure>
                                     </div>
                                     <div class="item-data">
                                         <div class="item-title">
@@ -161,7 +164,9 @@
                             <li class="col col-lg-4">
                                 <a href="#" class="item">
                                     <div class="item-image">
-                                        <img src="https://picsum.photos/600/400?random=3" alt="image" width="440">
+                                        <figure>
+                                            <img class="lazyload" data-src="https://picsum.photos/600/400?random=3" alt="image" width="440">
+                                        </figure>
                                     </div>
                                     <div class="item-data">
                                         <div class="item-title">
@@ -330,6 +335,16 @@
 
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+        window.addEventListener("load", function(event) {
+            lazyload();
+        });
+
+    });
+</script>
 <!--<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>-->
 <!--<script src="assets/js/app.min.js"></script>-->
 
