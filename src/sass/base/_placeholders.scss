@@ -1,4 +1,4 @@
-$ph-color: inherit;
+$ph-color: $black;
 $ph-opacity: 0.8;
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: $ph-color;
@@ -9,8 +9,7 @@ $ph-opacity: 0.8;
   opacity: $ph-opacity;
 }
 :-ms-input-placeholder { /* IE 10+ */
-  color: $ph-color;
-  opacity: $ph-opacity;
+  color: rgba($ph-color,$ph-opacity);
 }
 :-moz-placeholder { /* Firefox 18- */
   color: $ph-color;

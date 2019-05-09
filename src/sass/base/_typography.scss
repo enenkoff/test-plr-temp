@@ -1,35 +1,63 @@
+@include fonts('Museo Sans Cyrl','MuseoSansCyrl-100',100,'normal');
+@include fonts('Museo Sans Cyrl','MuseoSansCyrl-300',300,'normal');
+@include fonts('Museo Sans Cyrl','MuseoSansCyrl-500',500,'normal');
+@include fonts('Museo Sans Cyrl','MuseoSansCyrl-700',700,'normal');
+@include fonts('Museo Sans Cyrl','MuseoSansCyrl-900',900,'normal');
+
 @font-face {
-  font-family: 'Museo Sans Cyrl';
-  src: url('../fonts/MuseoSansCyrl-100.woff2') format('woff2'),
-  url('../fonts/MuseoSansCyrl-100.woff') format('woff');
-  font-weight: 100;
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.woff?wm3028') format('woff'),
+  url('../fonts/icomoon.svg?wm3028#icomoon') format('svg');
+  font-weight: normal;
   font-style: normal;
 }
-@font-face {
-  font-family: 'Museo Sans Cyrl';
-  src: url('../fonts/MuseoSansCyrl-300.woff2') format('woff2'),
-  url('../fonts/MuseoSansCyrl-300.woff') format('woff');
-  font-weight: 300;
+
+$icomoon-envelope: "\e900";
+$icomoon-like: "\e901";
+$icomoon-phone: "\e902";
+$icomoon-placeholder: "\e903";
+$icomoon-settings: "\e904";
+$icomoon-shopping: "\e905";
+
+[class^="icomoon-"], [class*=" icomoon-"] {
+  font-family: 'icomoon' !important;
+  speak: none;
   font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-@font-face {
-  font-family: 'Museo Sans Cyrl';
-  src: url('../fonts/MuseoSansCyrl-500.woff2') format('woff2'),
-  url('../fonts/MuseoSansCyrl-500.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
+
+.icomoon-envelope {
+  &:before {
+    content: $icomoon-envelope;
+  }
 }
-@font-face {
-  font-family: 'Museo Sans Cyrl';
-  src: url('../fonts/MuseoSansCyrl-700.woff2') format('woff2'),
-  url('../fonts/MuseoSansCyrl-700.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
+.icomoon-like {
+  &:before {
+    content: $icomoon-like;
+  }
 }
-@font-face {
-  font-family: 'Museo Sans Cyrl';
-  src: url('../fonts/MuseoSansCyrl-900.woff2') format('woff2'),
-  url('../fonts/MuseoSansCyrl-900.woff') format('woff');
-  font-weight: 900;
-  font-style: normal;
+.icomoon-phone {
+  &:before {
+    content: $icomoon-phone;
+  }
+}
+.icomoon-placeholder {
+  &:before {
+    content: $icomoon-placeholder;
+  }
+}
+.icomoon-settings {
+  &:before {
+    content: $icomoon-settings;
+  }
+}
+.icomoon-shopping {
+  &:before {
+    content: $icomoon-shopping;
+  }
 }

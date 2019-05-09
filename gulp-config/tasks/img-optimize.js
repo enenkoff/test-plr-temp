@@ -10,6 +10,5 @@ module.exports = function(gulp, plugins, path_src, path_dest, condition) {
             }),
         )
         .pipe(gulp.dest(path_dest))
-        .pipe(plugins.webp())
         .pipe(gulp.dest(path_dest));
 };
