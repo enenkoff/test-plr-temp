@@ -11,6 +11,12 @@
 </head>
 <body>
 
+<!-- preloader -->
+
+<div id="preloader" class="preloader"><div><img src="assets/images/loader.gif" alt="loading..."></div></div>
+
+<!-- END preloader -->
+
 <!-- svg sprite -->
 
 <div class="hide">
@@ -20,6 +26,29 @@
 </div>
 
 <!-- END svg sprite -->
+
+<script>
+    var xhr = new XMLHttpRequest(),
+        url = 'https://jsonplaceholder.typicode.com/posts',
+        news;
+
+    xhr.open('GET', url, true);
+    xhr.send();
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState != 4) return;
+
+        if(xhr.status != 200){
+            console.log(xhr.status + ': ' + xhr.statusText);
+        }
+        else {
+            news = JSON.parse(xhr.responseText);
+            console.log(news);
+        }
+
+    }
+
+</script>
 
 <div id="wrapper">
 
