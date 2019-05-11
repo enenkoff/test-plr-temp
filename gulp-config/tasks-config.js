@@ -96,10 +96,6 @@ module.exports = function(gulp, plugins) {
 
     // build app src file
 
-    gulp.task('js:rigger', () => {
-        return getTask('js-rigger', PATH_CONFIG.src.js_partials, PATH_CONFIG.src.js);
-    });
-
     gulp.task('webpack', () => {
         return getTask('webpack', PATH_CONFIG.src.js, PATH_CONFIG.build.js);
     });
@@ -108,7 +104,7 @@ module.exports = function(gulp, plugins) {
 
     gulp.task(
         'js:build',
-        gulp.series('js:rigger', 'webpack', done => {
+        gulp.series('webpack', done => {
             done();
         }),
     );
@@ -167,17 +163,13 @@ module.exports = function(gulp, plugins) {
                 'svg:copy',
                 'fonts:copy',
                 'html:build',
-                // 'js:build',
+                'js:build',
                 'img:optimize',
                 'browser:sync',
                 () => {
                     getTask('watch', PATH_CONFIG.watch.sass, 'css:build');
                     getTask('watch', PATH_CONFIG.watch.html, 'html:build');
-                    // getTask(
-                    //     'watch',
-                    //     [PATH_CONFIG.watch.js, PATH_CONFIG.watch.js_no_app],
-                    //     'js:build',
-                    // );
+                    getTask('watch', PATH_CONFIG.watch.js, 'js:build');
                     getTask('watch', PATH_CONFIG.watch.img, 'img:optimize');
                     getTask(
                         'watch',
@@ -195,7 +187,7 @@ module.exports = function(gulp, plugins) {
         'build',
         gulp.parallel(
             'css:build',
-            // 'js:build',
+            'js:build',
             'img:optimize',
             'svg:build',
             'media:copy',

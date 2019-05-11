@@ -4,8 +4,7 @@
   "description": "gulp package",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "webpack --mode development --watch",
-    "build": "webpack --mode production",
+    "build": "webpack --mode development --watch",
     "lint": "eslint --debug src/js/app-lnt.js --debug src/js/modules/*.js",
     "lint:write": "eslint --debug src/js/app-lnt.js --fix --debug src/js/modules/*.js --fix",
     "prettier": "prettier --write src/js/modules/*.js --write src/js/partials/*.js"
