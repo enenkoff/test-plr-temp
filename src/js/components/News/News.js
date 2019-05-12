@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Article from './Article';
 import initialArticle from './ArticlesData';
+import Gallery from '../Gallery/Gallery';
 
 class News extends Component {
     constructor() {
@@ -101,5 +102,7 @@ class News extends Component {
         );
     }
 }
+
+News.displayName = 'News';
 
 export default News;

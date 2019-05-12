@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Gallery from './Gallery';
 
 class Item extends Component {
     render() {
@@ -14,5 +15,7 @@ class Item extends Component {
         );
     }
 }
+
+Item.displayName = 'Item';
 
 export default Item;

@@ -72,4 +72,6 @@ class Gallery extends Component {
     }
 }
 
+Gallery.displayName = 'Gallery';
+
 export default Gallery;

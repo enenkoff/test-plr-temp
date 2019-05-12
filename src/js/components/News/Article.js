@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Item from '../Gallery/Item';
 
 class Article extends Component {
     render() {
@@ -36,5 +37,7 @@ class Article extends Component {
         );
     }
 }
+
+Article.displayName = 'Article';
 
 export default Article;

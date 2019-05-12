@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import News from '../News/News';
 
 class Subscribe extends Component {
     constructor(props) {
@@ -69,5 +70,7 @@ class Subscribe extends Component {
         );
     }
 }
+
+Subscribe.displayName = 'Subscribe';
 
 export default Subscribe;
