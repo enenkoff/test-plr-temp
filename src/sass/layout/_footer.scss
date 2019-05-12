@@ -32,6 +32,10 @@
     margin-bottom: 40px;
   }
   .form {
+    form {
+      display: flex;
+      flex-direction: column;
+    }
     .fieldset {
       display: inline-flex;
       align-items: center;

@@ -16,15 +16,17 @@ class News extends Component {
 
         this.loadAdditionalMovies = this.loadAdditionalMovies.bind(this);
     }
+
     componentWillUnmount() {
         clearInterval(this.timerID);
     }
+
     componentDidMount() {
         fetch('https://jsonplaceholder.typicode.com/posts')
             .then(res => res.json())
             .then(
                 result => {
-                    let rev_results = result.reverse();
+                    const rev_results = result.reverse();
                     this.setState({
                         isLoaded: true,
                         moreArticles: rev_results,
@@ -40,11 +42,13 @@ class News extends Component {
 
         lazyload();
 
-        this.timerID = setInterval(() => this.tick(), 200);
+        this.timerID = setInterval(() => this.tick(), 600);
     }
+
     tick() {
         lazyload();
     }
+
     loadAdditionalMovies() {
         let currentArticles = this.state.articles,
             currentNewArticles = this.state.displayedNewArticles,
@@ -64,6 +68,7 @@ class News extends Component {
                 .remove();
         }
     }
+
     render() {
         return (
             <section className="section home-news">

@@ -75,6 +75,9 @@
         transition: all 0.35s;
         position: relative;
       }
+      &-preview {
+        width: 100%;
+      }
       &-image {
         position: relative;
         overflow: hidden;

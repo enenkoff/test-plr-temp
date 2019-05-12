@@ -8068,18 +8068,22 @@ object-assign
                                         },
                                         o.a.createElement(
                                             'div',
-                                            { className: 'item-image' },
+                                            { className: 'item-preview' },
                                             o.a.createElement(
-                                                'figure',
-                                                null,
-                                                o.a.createElement('img', {
-                                                    className: 'lazyload',
-                                                    'data-src':
-                                                        'https://picsum.photos/600/400?random=' +
-                                                        this.props.imgIndex,
-                                                    alt: 'image',
-                                                    width: '440',
-                                                }),
+                                                'div',
+                                                { className: 'item-image' },
+                                                o.a.createElement(
+                                                    'figure',
+                                                    null,
+                                                    o.a.createElement('img', {
+                                                        className: 'lazyload',
+                                                        'data-src':
+                                                            'https://picsum.photos/600/400?random=' +
+                                                            this.props.imgIndex,
+                                                        alt: 'image',
+                                                        width: '440',
+                                                    }),
+                                                ),
                                             ),
                                         ),
                                         o.a.createElement(
@@ -8252,7 +8256,7 @@ object-assign
                                 lazyload(),
                                 (this.timerID = setInterval(function() {
                                     return e.tick();
-                                }, 200));
+                                }, 600));
                         },
                     },
                     {
@@ -8505,7 +8509,6 @@ object-assign
                 })(t, r['Component']),
                 (n = t),
                 (i = [
-                    { key: 'componentWillUnmount', value: function() {} },
                     {
                         key: 'componentDidMount',
                         value: function() {
@@ -8516,7 +8519,7 @@ object-assign
                                 })
                                 .then(
                                     function(t) {
-                                        var n = t.filter(function(e, t) {
+                                        var n = t.filter(function(e) {
                                             return 5 == e.albumId;
                                         });
                                         (n = n.slice(0, 24)),

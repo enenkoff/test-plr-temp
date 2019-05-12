@@ -14,13 +14,13 @@ class Gallery extends Component {
             isLoaded: false,
         };
     }
-    componentWillUnmount() {}
+
     componentDidMount() {
         fetch('https://jsonplaceholder.typicode.com/photos')
             .then(res => res.json())
             .then(
                 result => {
-                    let galleryItems = result.filter((el, i) => {
+                    let galleryItems = result.filter(el => {
                         return el.albumId == galleryCollection;
                     });
                     galleryItems = galleryItems.slice(0, galleryElements);
@@ -42,6 +42,7 @@ class Gallery extends Component {
             infobar: true,
         });
     }
+
     render() {
         return (
             <section className="section home-gallery">
