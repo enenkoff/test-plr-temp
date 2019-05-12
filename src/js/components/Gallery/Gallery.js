@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import Item from './Item';
-import jQuery from 'jquery/dist/jquery.min.js';
-import fancybox from '@fancyapps/fancybox/dist/jquery.fancybox.min.js';
 
 const galleryElements = 24;
 const galleryCollection = 5;

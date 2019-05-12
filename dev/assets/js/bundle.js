@@ -50,11 +50,172 @@
             return Object.prototype.hasOwnProperty.call(e, t);
         }),
         (n.p = ''),
-        n((n.s = 14));
+        n((n.s = 16));
 })([
     function(e, t, n) {
         'use strict';
-        e.exports = n(5);
+        e.exports = n(7);
+    },
+    function(e, t, n) {
+        'use strict';
+        (function(e) {
+            var r = n(0),
+                o = n.n(r),
+                i = n(4);
+            function a(e) {
+                return (a =
+                    'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
+                        ? function(e) {
+                              return typeof e;
+                          }
+                        : function(e) {
+                              return e &&
+                                  'function' == typeof Symbol &&
+                                  e.constructor === Symbol &&
+                                  e !== Symbol.prototype
+                                  ? 'symbol'
+                                  : typeof e;
+                          })(e);
+            }
+            function l(e, t) {
+                for (var n = 0; n < t.length; n++) {
+                    var r = t[n];
+                    (r.enumerable = r.enumerable || !1),
+                        (r.configurable = !0),
+                        'value' in r && (r.writable = !0),
+                        Object.defineProperty(e, r.key, r);
+                }
+            }
+            function s(e, t) {
+                return !t || ('object' !== a(t) && 'function' != typeof t)
+                    ? (function(e) {
+                          if (void 0 === e)
+                              throw new ReferenceError(
+                                  "this hasn't been initialised - super() hasn't been called",
+                              );
+                          return e;
+                      })(e)
+                    : t;
+            }
+            function u(e) {
+                return (u = Object.setPrototypeOf
+                    ? Object.getPrototypeOf
+                    : function(e) {
+                          return e.__proto__ || Object.getPrototypeOf(e);
+                      })(e);
+            }
+            function c(e, t) {
+                return (c =
+                    Object.setPrototypeOf ||
+                    function(e, t) {
+                        return (e.__proto__ = t), e;
+                    })(e, t);
+            }
+            var f = (function(t) {
+                function n() {
+                    var e;
+                    return (
+                        (function(e, t) {
+                            if (!(e instanceof t))
+                                throw new TypeError('Cannot call a class as a function');
+                        })(this, n),
+                        ((e = s(this, u(n).call(this))).state = {
+                            gallery: [],
+                            error: null,
+                            isLoaded: !1,
+                        }),
+                        e
+                    );
+                }
+                var a, f, d;
+                return (
+                    (function(e, t) {
+                        if ('function' != typeof t && null !== t)
+                            throw new TypeError(
+                                'Super expression must either be null or a function',
+                            );
+                        (e.prototype = Object.create(t && t.prototype, {
+                            constructor: { value: e, writable: !0, configurable: !0 },
+                        })),
+                            t && c(e, t);
+                    })(n, r['Component']),
+                    (a = n),
+                    (f = [
+                        {
+                            key: 'componentDidMount',
+                            value: function() {
+                                var t = this;
+                                fetch('https://jsonplaceholder.typicode.com/photos')
+                                    .then(function(e) {
+                                        return e.json();
+                                    })
+                                    .then(
+                                        function(e) {
+                                            var n = e.filter(function(e) {
+                                                return 5 == e.albumId;
+                                            });
+                                            (n = n.slice(0, 24)),
+                                                t.setState({ isLoaded: !0, gallery: n });
+                                        },
+                                        function(e) {
+                                            t.setState({ isLoaded: !0, error: e });
+                                        },
+                                    ),
+                                    e('[data-fancybox="gallery"]').fancybox({
+                                        buttons: ['close'],
+                                        infobar: !0,
+                                    });
+                            },
+                        },
+                        {
+                            key: 'render',
+                            value: function() {
+                                return o.a.createElement(
+                                    'section',
+                                    { className: 'section home-gallery' },
+                                    o.a.createElement(
+                                        'div',
+                                        { className: 'content' },
+                                        o.a.createElement(
+                                            'div',
+                                            { className: 'row' },
+                                            o.a.createElement(
+                                                'div',
+                                                { className: 'col col-lg-12' },
+                                                o.a.createElement(
+                                                    'h3',
+                                                    { className: 'section-title' },
+                                                    'INSIDE Company',
+                                                ),
+                                            ),
+                                        ),
+                                    ),
+                                    o.a.createElement(
+                                        'div',
+                                        { className: 'gallery-box' },
+                                        o.a.createElement(
+                                            'div',
+                                            { className: 'gallery' },
+                                            this.state.gallery.map(function(e, t) {
+                                                return o.a.createElement(i.a, {
+                                                    key: t,
+                                                    imgUrl: e.url,
+                                                    thumbUrl: e.thumbnailUrl,
+                                                    title: e.title,
+                                                });
+                                            }),
+                                        ),
+                                    ),
+                                );
+                            },
+                        },
+                    ]) && l(a.prototype, f),
+                    d && l(a, d),
+                    n
+                );
+            })();
+            (f.displayName = 'Gallery'), (t.a = f);
+        }.call(this, n(3)));
     },
     function(e, t, n) {
         'use strict';
@@ -69,7 +230,7 @@
                     console.error(e);
                 }
         })(),
-            (e.exports = n(6));
+            (e.exports = n(8));
     },
     function(e, t, n) {
         var r;
@@ -5570,6 +5731,107 @@
     },
     function(e, t, n) {
         'use strict';
+        var r = n(0),
+            o = n.n(r);
+        n(1);
+        function i(e) {
+            return (i =
+                'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
+                    ? function(e) {
+                          return typeof e;
+                      }
+                    : function(e) {
+                          return e &&
+                              'function' == typeof Symbol &&
+                              e.constructor === Symbol &&
+                              e !== Symbol.prototype
+                              ? 'symbol'
+                              : typeof e;
+                      })(e);
+        }
+        function a(e, t) {
+            for (var n = 0; n < t.length; n++) {
+                var r = t[n];
+                (r.enumerable = r.enumerable || !1),
+                    (r.configurable = !0),
+                    'value' in r && (r.writable = !0),
+                    Object.defineProperty(e, r.key, r);
+            }
+        }
+        function l(e, t) {
+            return !t || ('object' !== i(t) && 'function' != typeof t)
+                ? (function(e) {
+                      if (void 0 === e)
+                          throw new ReferenceError(
+                              "this hasn't been initialised - super() hasn't been called",
+                          );
+                      return e;
+                  })(e)
+                : t;
+        }
+        function s(e) {
+            return (s = Object.setPrototypeOf
+                ? Object.getPrototypeOf
+                : function(e) {
+                      return e.__proto__ || Object.getPrototypeOf(e);
+                  })(e);
+        }
+        function u(e, t) {
+            return (u =
+                Object.setPrototypeOf ||
+                function(e, t) {
+                    return (e.__proto__ = t), e;
+                })(e, t);
+        }
+        var c = (function(e) {
+            function t() {
+                return (
+                    (function(e, t) {
+                        if (!(e instanceof t))
+                            throw new TypeError('Cannot call a class as a function');
+                    })(this, t),
+                    l(this, s(t).apply(this, arguments))
+                );
+            }
+            var n, i, c;
+            return (
+                (function(e, t) {
+                    if ('function' != typeof t && null !== t)
+                        throw new TypeError('Super expression must either be null or a function');
+                    (e.prototype = Object.create(t && t.prototype, {
+                        constructor: { value: e, writable: !0, configurable: !0 },
+                    })),
+                        t && u(e, t);
+                })(t, r['Component']),
+                (n = t),
+                (i = [
+                    {
+                        key: 'render',
+                        value: function() {
+                            return o.a.createElement(
+                                'a',
+                                {
+                                    href: this.props.imgUrl,
+                                    'data-fancybox': 'gallery',
+                                    'data-caption': this.props.title,
+                                    className: 'item',
+                                },
+                                o.a.createElement('img', {
+                                    src: this.props.thumbUrl,
+                                    alt: 'Gallery',
+                                }),
+                            );
+                        },
+                    },
+                ]) && a(n.prototype, i),
+                c && a(n, c),
+                t
+            );
+        })();
+        (c.displayName = 'Item'), (t.a = c);
+    },
+    function(e, t, n) {
+        'use strict';
         /*
 object-assign
 (c) Sindre Sorhus
@@ -5649,7 +5911,7 @@ object-assign
          *
          * This source code is licensed under the MIT license found in the
          * LICENSE file in the root directory of this source tree.
-         */ var r = n(3),
+         */ var r = n(5),
             o = 'function' == typeof Symbol && Symbol.for,
             i = o ? Symbol.for('react.element') : 60103,
             a = o ? Symbol.for('react.portal') : 60106,
@@ -6025,8 +6287,8 @@ object-assign
          * This source code is licensed under the MIT license found in the
          * LICENSE file in the root directory of this source tree.
          */ var r = n(0),
-            o = n(3),
-            i = n(7);
+            o = n(5),
+            i = n(9);
         function a(e) {
             for (
                 var t = arguments.length - 1,
@@ -12180,7 +12442,7 @@ object-assign
     },
     function(e, t, n) {
         'use strict';
-        e.exports = n(8);
+        e.exports = n(10);
     },
     function(e, t, n) {
         'use strict';
@@ -12531,7 +12793,7 @@ object-assign
                 (t.unstable_getFirstCallbackNode = function() {
                     return n;
                 });
-        }.call(this, n(4)));
+        }.call(this, n(6)));
     },
     function(e, t, n) {
         (function(e) {
@@ -15964,7 +16226,7 @@ object-assign
                         },
                     });
                 })(document, e);
-        }.call(this, n(2)));
+        }.call(this, n(3)));
     },
     function(e, t, n) {
         (function(t, n) {
@@ -16382,7 +16644,7 @@ object-assign
                 );
             }),
                 (e.exports = r());
-        }.call(this, n(11), n(4)));
+        }.call(this, n(13), n(6)));
     },
     function(e, t) {
         var n,
@@ -16497,7 +16759,7 @@ object-assign
             });
     },
     function(e, t, n) {
-        n(13), (e.exports = self.fetch.bind(self));
+        n(15), (e.exports = self.fetch.bind(self));
     },
     function(e, t, n) {
         'use strict';
@@ -16908,13 +17170,11 @@ object-assign
         n.r(t);
         var r = n(0),
             o = n.n(r),
-            i = n(1),
-            a = n.n(i),
-            l = n(2),
-            s = n.n(l);
-        n(9);
-        function u(e) {
-            return (u =
+            i = n(2),
+            a = n.n(i);
+        n(3), n(11), n(4);
+        function l(e) {
+            return (l =
                 'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
                     ? function(e) {
                           return typeof e;
@@ -16928,7 +17188,7 @@ object-assign
                               : typeof e;
                       })(e);
         }
-        function c(e, t) {
+        function s(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1),
@@ -16936,46 +17196,40 @@ object-assign
                     'value' in r && (r.writable = !0),
                     Object.defineProperty(e, r.key, r);
             }
+        }
+        function u(e, t) {
+            return !t || ('object' !== l(t) && 'function' != typeof t)
+                ? (function(e) {
+                      if (void 0 === e)
+                          throw new ReferenceError(
+                              "this hasn't been initialised - super() hasn't been called",
+                          );
+                      return e;
+                  })(e)
+                : t;
+        }
+        function c(e) {
+            return (c = Object.setPrototypeOf
+                ? Object.getPrototypeOf
+                : function(e) {
+                      return e.__proto__ || Object.getPrototypeOf(e);
+                  })(e);
         }
         function f(e, t) {
-            return !t || ('object' !== u(t) && 'function' != typeof t)
-                ? (function(e) {
-                      if (void 0 === e)
-                          throw new ReferenceError(
-                              "this hasn't been initialised - super() hasn't been called",
-                          );
-                      return e;
-                  })(e)
-                : t;
-        }
-        function d(e) {
-            return (d = Object.setPrototypeOf
-                ? Object.getPrototypeOf
-                : function(e) {
-                      return e.__proto__ || Object.getPrototypeOf(e);
-                  })(e);
-        }
-        function p(e, t) {
-            return (p =
+            return (f =
                 Object.setPrototypeOf ||
                 function(e, t) {
                     return (e.__proto__ = t), e;
                 })(e, t);
         }
-        var h = (function(e) {
+        var d = (function(e) {
             function t() {
-                var e;
                 return (
                     (function(e, t) {
                         if (!(e instanceof t))
                             throw new TypeError('Cannot call a class as a function');
                     })(this, t),
-                    ((e = f(this, d(t).call(this))).state = {
-                        gallery: [],
-                        error: null,
-                        isLoaded: !1,
-                    }),
-                    e
+                    u(this, c(t).apply(this, arguments))
                 );
             }
             var n, i, a;
@@ -16986,249 +17240,7 @@ object-assign
                     (e.prototype = Object.create(t && t.prototype, {
                         constructor: { value: e, writable: !0, configurable: !0 },
                     })),
-                        t && p(e, t);
-                })(t, r['Component']),
-                (n = t),
-                (i = [
-                    {
-                        key: 'componentDidMount',
-                        value: function() {
-                            var e = this;
-                            fetch('https://jsonplaceholder.typicode.com/photos')
-                                .then(function(e) {
-                                    return e.json();
-                                })
-                                .then(
-                                    function(t) {
-                                        var n = t.filter(function(e) {
-                                            return 5 == e.albumId;
-                                        });
-                                        (n = n.slice(0, 24)),
-                                            e.setState({ isLoaded: !0, gallery: n });
-                                    },
-                                    function(t) {
-                                        e.setState({ isLoaded: !0, error: t });
-                                    },
-                                ),
-                                s()('[data-fancybox="gallery"]').fancybox({
-                                    buttons: ['close'],
-                                    infobar: !0,
-                                });
-                        },
-                    },
-                    {
-                        key: 'render',
-                        value: function() {
-                            return o.a.createElement(
-                                'section',
-                                { className: 'section home-gallery' },
-                                o.a.createElement(
-                                    'div',
-                                    { className: 'content' },
-                                    o.a.createElement(
-                                        'div',
-                                        { className: 'row' },
-                                        o.a.createElement(
-                                            'div',
-                                            { className: 'col col-lg-12' },
-                                            o.a.createElement(
-                                                'h3',
-                                                { className: 'section-title' },
-                                                'INSIDE Company',
-                                            ),
-                                        ),
-                                    ),
-                                ),
-                                o.a.createElement(
-                                    'div',
-                                    { className: 'gallery-box' },
-                                    o.a.createElement(
-                                        'div',
-                                        { className: 'gallery' },
-                                        this.state.gallery.map(function(e, t) {
-                                            return o.a.createElement(T, {
-                                                key: t,
-                                                imgUrl: e.url,
-                                                thumbUrl: e.thumbnailUrl,
-                                                title: e.title,
-                                            });
-                                        }),
-                                    ),
-                                ),
-                            );
-                        },
-                    },
-                ]) && c(n.prototype, i),
-                a && c(n, a),
-                t
-            );
-        })();
-        h.displayName = 'Gallery';
-        var m = h;
-        function g(e) {
-            return (g =
-                'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
-                    ? function(e) {
-                          return typeof e;
-                      }
-                    : function(e) {
-                          return e &&
-                              'function' == typeof Symbol &&
-                              e.constructor === Symbol &&
-                              e !== Symbol.prototype
-                              ? 'symbol'
-                              : typeof e;
-                      })(e);
-        }
-        function y(e, t) {
-            for (var n = 0; n < t.length; n++) {
-                var r = t[n];
-                (r.enumerable = r.enumerable || !1),
-                    (r.configurable = !0),
-                    'value' in r && (r.writable = !0),
-                    Object.defineProperty(e, r.key, r);
-            }
-        }
-        function v(e, t) {
-            return !t || ('object' !== g(t) && 'function' != typeof t)
-                ? (function(e) {
-                      if (void 0 === e)
-                          throw new ReferenceError(
-                              "this hasn't been initialised - super() hasn't been called",
-                          );
-                      return e;
-                  })(e)
-                : t;
-        }
-        function b(e) {
-            return (b = Object.setPrototypeOf
-                ? Object.getPrototypeOf
-                : function(e) {
-                      return e.__proto__ || Object.getPrototypeOf(e);
-                  })(e);
-        }
-        function x(e, t) {
-            return (x =
-                Object.setPrototypeOf ||
-                function(e, t) {
-                    return (e.__proto__ = t), e;
-                })(e, t);
-        }
-        var w = (function(e) {
-            function t() {
-                return (
-                    (function(e, t) {
-                        if (!(e instanceof t))
-                            throw new TypeError('Cannot call a class as a function');
-                    })(this, t),
-                    v(this, b(t).apply(this, arguments))
-                );
-            }
-            var n, i, a;
-            return (
-                (function(e, t) {
-                    if ('function' != typeof t && null !== t)
-                        throw new TypeError('Super expression must either be null or a function');
-                    (e.prototype = Object.create(t && t.prototype, {
-                        constructor: { value: e, writable: !0, configurable: !0 },
-                    })),
-                        t && x(e, t);
-                })(t, r['Component']),
-                (n = t),
-                (i = [
-                    {
-                        key: 'render',
-                        value: function() {
-                            return o.a.createElement(
-                                'a',
-                                {
-                                    href: this.props.imgUrl,
-                                    'data-fancybox': 'gallery',
-                                    'data-caption': this.props.title,
-                                    className: 'item',
-                                },
-                                o.a.createElement('img', {
-                                    src: this.props.thumbUrl,
-                                    alt: 'Gallery',
-                                }),
-                            );
-                        },
-                    },
-                ]) && y(n.prototype, i),
-                a && y(n, a),
-                t
-            );
-        })();
-        w.displayName = 'Item';
-        var T = w;
-        function S(e) {
-            return (S =
-                'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
-                    ? function(e) {
-                          return typeof e;
-                      }
-                    : function(e) {
-                          return e &&
-                              'function' == typeof Symbol &&
-                              e.constructor === Symbol &&
-                              e !== Symbol.prototype
-                              ? 'symbol'
-                              : typeof e;
-                      })(e);
-        }
-        function C(e, t) {
-            for (var n = 0; n < t.length; n++) {
-                var r = t[n];
-                (r.enumerable = r.enumerable || !1),
-                    (r.configurable = !0),
-                    'value' in r && (r.writable = !0),
-                    Object.defineProperty(e, r.key, r);
-            }
-        }
-        function k(e, t) {
-            return !t || ('object' !== S(t) && 'function' != typeof t)
-                ? (function(e) {
-                      if (void 0 === e)
-                          throw new ReferenceError(
-                              "this hasn't been initialised - super() hasn't been called",
-                          );
-                      return e;
-                  })(e)
-                : t;
-        }
-        function E(e) {
-            return (E = Object.setPrototypeOf
-                ? Object.getPrototypeOf
-                : function(e) {
-                      return e.__proto__ || Object.getPrototypeOf(e);
-                  })(e);
-        }
-        function P(e, t) {
-            return (P =
-                Object.setPrototypeOf ||
-                function(e, t) {
-                    return (e.__proto__ = t), e;
-                })(e, t);
-        }
-        var _ = (function(e) {
-            function t() {
-                return (
-                    (function(e, t) {
-                        if (!(e instanceof t))
-                            throw new TypeError('Cannot call a class as a function');
-                    })(this, t),
-                    k(this, E(t).apply(this, arguments))
-                );
-            }
-            var n, i, a;
-            return (
-                (function(e, t) {
-                    if ('function' != typeof t && null !== t)
-                        throw new TypeError('Super expression must either be null or a function');
-                    (e.prototype = Object.create(t && t.prototype, {
-                        constructor: { value: e, writable: !0, configurable: !0 },
-                    })),
-                        t && P(e, t);
+                        t && f(e, t);
                 })(t, r['Component']),
                 (n = t),
                 (i = [
@@ -17288,14 +17300,14 @@ object-assign
                             );
                         },
                     },
-                ]) && C(n.prototype, i),
-                a && C(n, a),
+                ]) && s(n.prototype, i),
+                a && s(n, a),
                 t
             );
         })();
-        _.displayName = 'Article';
-        var A = _,
-            N = [
+        d.displayName = 'Article';
+        var p = d,
+            h = [
                 {
                     title: 'Compatible Inkjet Cartridge Which One Will You Choose',
                     body:
@@ -17328,9 +17340,10 @@ object-assign
                     body:
                         'And the product of this video conversion is supported by the iPod system requirements and configurations so you can enjoy watching your favorite movies, home movies, music videos and whatever it is you desire on your iPod player. ',
                 },
-            ];
-        function O(e) {
-            return (O =
+            ],
+            m = n(1);
+        function g(e) {
+            return (g =
                 'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
                     ? function(e) {
                           return typeof e;
@@ -17344,7 +17357,7 @@ object-assign
                               : typeof e;
                       })(e);
         }
-        function $(e, t) {
+        function y(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1),
@@ -17353,28 +17366,28 @@ object-assign
                     Object.defineProperty(e, r.key, r);
             }
         }
-        function D(e) {
-            return (D = Object.setPrototypeOf
+        function v(e) {
+            return (v = Object.setPrototypeOf
                 ? Object.getPrototypeOf
                 : function(e) {
                       return e.__proto__ || Object.getPrototypeOf(e);
                   })(e);
         }
-        function L(e) {
+        function b(e) {
             if (void 0 === e)
                 throw new ReferenceError(
                     "this hasn't been initialised - super() hasn't been called",
                 );
             return e;
         }
-        function j(e, t) {
-            return (j =
+        function x(e, t) {
+            return (x =
                 Object.setPrototypeOf ||
                 function(e, t) {
                     return (e.__proto__ = t), e;
                 })(e, t);
         }
-        var I = (function(e) {
+        var w = (function(e) {
             function t() {
                 var e, n, r;
                 return (
@@ -17384,16 +17397,16 @@ object-assign
                     })(this, t),
                     (n = this),
                     ((e =
-                        !(r = D(t).call(this)) || ('object' !== O(r) && 'function' != typeof r)
-                            ? L(n)
+                        !(r = v(t).call(this)) || ('object' !== g(r) && 'function' != typeof r)
+                            ? b(n)
                             : r).state = {
-                        articles: N,
+                        articles: h,
                         displayedNewArticles: 0,
                         moreArticles: [],
                         error: null,
                         isLoaded: !1,
                     }),
-                    (e.loadAdditionalMovies = e.loadAdditionalMovies.bind(L(e))),
+                    (e.loadAdditionalMovies = e.loadAdditionalMovies.bind(b(e))),
                     e
                 );
             }
@@ -17405,7 +17418,7 @@ object-assign
                     (e.prototype = Object.create(t && t.prototype, {
                         constructor: { value: e, writable: !0, configurable: !0 },
                     })),
-                        t && j(e, t);
+                        t && x(e, t);
                 })(t, r['Component']),
                 (n = t),
                 (i = [
@@ -17489,7 +17502,7 @@ object-assign
                                             'ul',
                                             { className: 'row' },
                                             this.state.articles.map(function(e, t) {
-                                                return o.a.createElement(A, {
+                                                return o.a.createElement(p, {
                                                     link: '#',
                                                     key: t,
                                                     imgIndex: t,
@@ -17512,15 +17525,15 @@ object-assign
                             );
                         },
                     },
-                ]) && $(n.prototype, i),
-                a && $(n, a),
+                ]) && y(n.prototype, i),
+                a && y(n, a),
                 t
             );
         })();
-        I.displayName = 'News';
-        var M = I;
-        function R(e) {
-            return (R =
+        w.displayName = 'News';
+        var T = w;
+        function S(e) {
+            return (S =
                 'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
                     ? function(e) {
                           return typeof e;
@@ -17534,7 +17547,7 @@ object-assign
                               : typeof e;
                       })(e);
         }
-        function F(e, t) {
+        function C(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
                 (r.enumerable = r.enumerable || !1),
@@ -17543,28 +17556,28 @@ object-assign
                     Object.defineProperty(e, r.key, r);
             }
         }
-        function z(e) {
-            return (z = Object.setPrototypeOf
+        function k(e) {
+            return (k = Object.setPrototypeOf
                 ? Object.getPrototypeOf
                 : function(e) {
                       return e.__proto__ || Object.getPrototypeOf(e);
                   })(e);
         }
-        function H(e) {
+        function E(e) {
             if (void 0 === e)
                 throw new ReferenceError(
                     "this hasn't been initialised - super() hasn't been called",
                 );
             return e;
         }
-        function U(e, t) {
-            return (U =
+        function P(e, t) {
+            return (P =
                 Object.setPrototypeOf ||
                 function(e, t) {
                     return (e.__proto__ = t), e;
                 })(e, t);
         }
-        var B = (function(e) {
+        var _ = (function(e) {
             function t(e) {
                 var n, r, o;
                 return (
@@ -17574,11 +17587,11 @@ object-assign
                     })(this, t),
                     (r = this),
                     ((n =
-                        !(o = z(t).call(this, e)) || ('object' !== R(o) && 'function' != typeof o)
-                            ? H(r)
+                        !(o = k(t).call(this, e)) || ('object' !== S(o) && 'function' != typeof o)
+                            ? E(r)
                             : o).state = { email: '', changeCheck: !1, isInvalid: !1 }),
-                    (n.handleUserInput = n.handleUserInput.bind(H(n))),
-                    (n.handleSubmit = n.handleSubmit.bind(H(n))),
+                    (n.handleUserInput = n.handleUserInput.bind(E(n))),
+                    (n.handleSubmit = n.handleSubmit.bind(E(n))),
                     n
                 );
             }
@@ -17590,7 +17603,7 @@ object-assign
                     (e.prototype = Object.create(t && t.prototype, {
                         constructor: { value: e, writable: !0, configurable: !0 },
                     })),
-                        t && U(e, t);
+                        t && P(e, t);
                 })(t, r['Component']),
                 (n = t),
                 (i = [
@@ -17675,17 +17688,17 @@ object-assign
                             );
                         },
                     },
-                ]) && F(n.prototype, i),
-                a && F(n, a),
+                ]) && C(n.prototype, i),
+                a && C(n, a),
                 t
             );
         })();
-        B.displayName = 'Subscribe';
-        var q = B;
-        n(10).polyfill(),
-            n(12),
-            a.a.render(o.a.createElement(M, null), document.getElementById('news')),
-            a.a.render(o.a.createElement(m, null), document.getElementById('gallery')),
-            a.a.render(o.a.createElement(q, null), document.getElementById('subscribe'));
+        _.displayName = 'Subscribe';
+        var A = _;
+        n(12).polyfill(),
+            n(14),
+            a.a.render(o.a.createElement(T, null), document.getElementById('news')),
+            a.a.render(o.a.createElement(m.a, null), document.getElementById('gallery')),
+            a.a.render(o.a.createElement(A, null), document.getElementById('subscribe'));
     },
 ]);
