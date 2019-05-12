@@ -25,6 +25,7 @@
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^8.2.3",
     "autoprefixer": "^9.5.1",
     "babel-loader": "^8.0.5",
     "browser-sync": "^2.26.3",
@@ -62,9 +63,10 @@
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
-    "babel-eslint": "^10.0.1",
+    "@fancyapps/fancybox": "^3.5.7",
     "es6-promise": "^4.2.6",
     "isomorphic-fetch": "^2.2.1",
+    "jquery": "^3.4.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "stylefmt": "^6.0.3"
