@@ -8058,7 +8058,7 @@ object-assign
                             value: function() {
                                 return o.a.createElement(
                                     'li',
-                                    { className: 'col col-lg-4' },
+                                    { className: 'col col-lg-4 col-sm-6' },
                                     o.a.createElement(
                                         'a',
                                         {
@@ -8100,7 +8100,7 @@ object-assign
                                                 'div',
                                                 { className: 'item-readme' },
                                                 o.a.createElement('div', { className: 'ico' }),
-                                                o.a.createElement('span', null, 'Readme'),
+                                                o.a.createElement('span', null, 'Read me'),
                                             ),
                                         ),
                                     ),

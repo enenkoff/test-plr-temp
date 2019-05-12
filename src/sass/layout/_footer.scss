@@ -73,6 +73,10 @@
       font-weight: 500;
       padding: 0 24px;
       margin-left: $padding;
+      transition: all 0.3s;
+      &:hover {
+        background-color: lighten($btn-blue,5);
+      }
     }
   }
 }

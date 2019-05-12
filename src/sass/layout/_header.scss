@@ -25,6 +25,25 @@
     }
     a {
       color: $white;
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        height: 2px;
+        transition: all 0.3s;
+        opacity: 0;
+        transform: translate3d(0,6px,0);
+        background-color: currentColor;
+      }
+      &:hover {
+        &:after {
+          opacity: 1;
+          transform: translate3d(0,2px,0);
+        }
+      }
     }
   }
   &-nav {
@@ -33,6 +52,9 @@
   }
   &-inner {
     align-items: center;
+    @include media(screen,960){
+      flex-direction: column;
+    }
     .header-auth {
       display: flex;
       justify-content: flex-end;
@@ -57,10 +79,17 @@
     .login {
       border-color: $btn-blue_hover;
       background: transparent;
+      &:hover {
+        border-color: lighten($btn-blue_hover,5);
+      }
     }
     .signup {
       border-color: $btn-blue;
       background-color: $btn-blue;
+      &:hover {
+        border-color: lighten($btn-blue,5);
+        background-color: lighten($btn-blue,5);
+      }
     }
   }
 }

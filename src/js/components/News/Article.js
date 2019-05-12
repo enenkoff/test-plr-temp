@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Article extends Component {
     render() {
         return (
-            <li className="col col-lg-4">
+            <li className="col col-lg-4 col-sm-6">
                 <a target="_blank" href="https://plarium.com/en/blog/" className="item">
                     <div className="item-image">
                         <figure>
@@ -25,7 +25,7 @@ class Article extends Component {
                         />
                         <div className="item-readme">
                             <div className="ico" />
-                            <span>Readme</span>
+                            <span>Read me</span>
                         </div>
                     </div>
                 </a>

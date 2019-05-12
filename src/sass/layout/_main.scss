@@ -3,10 +3,7 @@ html {
   &.ovh {
     overflow: hidden;
   }
-  @include media(hover,1201){font-size: 14px;}
-  @include breakpoints(1025,1200){font-size: 13px;}
-  @include breakpoints(768,1024){font-size: 12px;}
-  @include media(screen,767){font-size: 11px;}
+
 }
 body {
   line-height: 1.4;
@@ -31,7 +28,6 @@ svg {
   position: relative;
   width: 100%;
   flex: 1 0 auto;
-  min-width: 740px;
 }
 #wrapper {
   display: flex;
@@ -39,6 +35,7 @@ svg {
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
+  min-width: 740px;
 
 }
 .container {
@@ -46,6 +43,7 @@ svg {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  position: relative;
 }
 .section {
   margin-bottom: 85px;
@@ -102,5 +100,9 @@ svg {
     text-align: center;
     background-color: $white;
     outline: none;
+    transition: all 0.3s;
+    &:hover {
+      color: $btn-orange;
+    }
   }
 }
